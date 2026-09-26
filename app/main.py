@@ -4,8 +4,10 @@ import numpy as np
 import matplotlib.cm as cm
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 from app.inference import (
     predict_image,
@@ -25,6 +27,11 @@ app = FastAPI(
     description="Multi-label chest X-ray abnormality prediction API",
     version="1.0.0"
 )
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -124,3 +131,7 @@ async def explain(
         buffer,
         media_type="image/png"
     )
+
+@app.get("/")
+def frontend():
+    return FileResponse(BASE_DIR / "frontend" / "index.html")
