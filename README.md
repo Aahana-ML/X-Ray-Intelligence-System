@@ -370,6 +370,7 @@ It is not a clinically validated medical diagnostic system and should not be use
 - The class-specific thresholds were optimized using the validation set.
 - Grad-CAM visualizations represent model attention and should not be interpreted as clinically validated localization.
 - The model's output scores should not be interpreted as calibrated clinical probabilities.
+- Performance on synthetic or out-of-distribution images may differ substantially from performance on the original dataset distribution.
 
 
 ## 👩‍💻 Author
