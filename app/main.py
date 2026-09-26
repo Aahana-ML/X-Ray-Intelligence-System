@@ -127,6 +127,13 @@ async def explain(
         media_type="image/png"
     )
 
+
+app.mount(
+    "/static",
+    StaticFiles(directory=BASE_DIR / "frontend"),
+    name="static"
+)
+
 @app.get("/")
 def frontend():
     return FileResponse(BASE_DIR / "frontend" / "index.html")
