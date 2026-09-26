@@ -83,27 +83,27 @@ Dense Layer
 
 The model was developed using the following approach:
 
--Transfer Learning
+- Transfer Learning
 EfficientNetB0 was initialized with ImageNet pretrained weights.
 The pretrained backbone was initially frozen while training the classification head.
 
--Fine-Tuning
+- Fine-Tuning
 The final layers of EfficientNetB0 were unfrozen.
 
--Batch Normalization layers were kept frozen.
+- Batch Normalization layers were kept frozen.
 A lower learning rate was used during fine-tuning.
 
--Data Augmentation
+- Data Augmentation
 Random rotation
 Random translation
 Random zoom
 Random contrast adjustment
 
--Multi-Label Classification
+- Multi-Label Classification
 Each abnormality has an independent sigmoid output.
 Binary Cross Entropy was used as the loss function.
 
--Threshold Tuning
+- Threshold Tuning
 Instead of using a fixed 0.5 threshold for every abnormality, class-specific thresholds were selected using the validation set.
 These thresholds were then applied to the held-out test set.
 
@@ -112,13 +112,13 @@ These thresholds were then applied to the held-out test set.
 
 Chest X-ray images are:
 
-Decoded as RGB images
-Resized to 224 × 224
-Converted to floating-point tensors
-Passed through the EfficientNetB0 pipeline
+- Decoded as RGB images
+- Resized to 224 × 224
+- Converted to floating-point tensors
+- Passed through the EfficientNetB0 pipeline
 
 The final model produces 14 independent outputs, one for each supported abnormality.
-```
+
 
 ```
 ## 📊 Evaluation & Results
@@ -267,17 +267,7 @@ Docker Container
 
 The complete application is containerized using **Docker**, allowing the backend, trained model, configuration files, and frontend to run as a single deployable application.
 
-### Docker Architecture
 
-```text
-Docker Container
-│
-├── FastAPI Backend
-├── TensorFlow Model
-├── Grad-CAM
-├── Configuration
-└── Web Frontend
-```
 
 ### Part 10 — Project Structure
 
