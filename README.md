@@ -77,8 +77,8 @@ Dense Layer
      │
      ▼
 14 Sigmoid Outputs
-```
 
+```
 ## Training Strategy
 
 The model was developed using the following approach:
@@ -106,7 +106,6 @@ Binary Cross Entropy was used as the loss function.
 - Threshold Tuning
 Instead of using a fixed 0.5 threshold for every abnormality, class-specific thresholds were selected using the validation set.
 These thresholds were then applied to the held-out test set.
-
 
 ## Input Processing
 
@@ -262,14 +261,6 @@ Docker Container
 ├── Configuration
 └── Web Frontend
 ```
-
-## 🐳 Docker & Cloud Deployment
-
-The complete application is containerized using **Docker**, allowing the backend, trained model, configuration files, and frontend to run as a single deployable application.
-
-
-
-### Part 10 — Project Structure
 
 ## 📁 Project Structure
 
