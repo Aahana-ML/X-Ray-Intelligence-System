@@ -44,12 +44,7 @@ app.add_middleware(
 grad_model = create_grad_model(model)
 
 
-@app.get("/")
-def home():
 
-    return {
-        "message": "X-Ray Intelligence System API is running"
-    }
 
 
 
