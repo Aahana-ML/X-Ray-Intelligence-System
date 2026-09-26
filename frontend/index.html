@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>X-Ray Intelligence System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🩻 X-Ray Intelligence System</h1>
+
+            <p class="subtitle">
+                AI-assisted chest X-ray abnormality analysis
+            </p>
+        </header>
+
+
+        <div class="upload-section">
+
+            <h2>Upload Chest X-Ray</h2>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+            >
+
+            <button id="analyzeButton">
+                Analyze X-Ray
+            </button>
+
+        </div>
+
+
+        <div id="preview"></div>
+
+
+        <div id="results"></div>
+
+
+        <div id="explanation" class="explanation-section">
+
+            <h2>Grad-CAM Explanation</h2>
+
+            <p>
+                Select an abnormality to visualize where the model
+                focused its attention.
+            </p>
+
+            <select id="classSelect">
+                <option value="">Select abnormality</option>
+            </select>
+
+            <button id="explainButton">
+                Generate Grad-CAM
+            </button>
+
+            <div id="gradcamResult"></div>
+
+        </div>
+
+
+        <p class="disclaimer">
+            ⚠️ This system is for educational and research purposes only
+            and is not a medical diagnosis.
+        </p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
