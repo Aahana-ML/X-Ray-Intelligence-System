@@ -118,7 +118,7 @@ Chest X-ray images are:
 - Passed through the EfficientNetB0 pipeline
 
 The final model produces 14 independent outputs, one for each supported abnormality.
-
+```
 
 ```
 ## 📊 Evaluation & Results
