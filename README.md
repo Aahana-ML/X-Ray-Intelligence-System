@@ -1,5 +1,6 @@
 # 🩻 X-Ray Intelligence System
 
+
 An AI-assisted chest X-ray analysis system for multi-label abnormality classification using deep learning, with Grad-CAM explainability, FastAPI, Docker, and a web interface.
 
 ## 🚀 Live Demo
@@ -9,6 +10,7 @@ An AI-assisted chest X-ray analysis system for multi-label abnormality classific
 > ⚠️ This system is for educational and research purposes only and is not a medical diagnostic system.
 
 
+
 ## 📌 Project Overview
 
 Chest X-rays can contain multiple abnormalities in the same image. Therefore, this project approaches chest X-ray analysis as a **multi-label classification problem**, where a single X-ray can receive multiple abnormality predictions.
@@ -16,6 +18,7 @@ Chest X-rays can contain multiple abnormalities in the same image. Therefore, th
 The system uses a deep learning model based on **EfficientNetB0** to analyze chest X-ray images and produce independent scores for 14 abnormalities.
 
 It also includes **Grad-CAM explainability**, allowing users to visualize the regions of the X-ray that contributed to the model's prediction.
+
 
 ## 🎯 Problem Statement
 
@@ -79,6 +82,7 @@ Dense Layer
 14 Sigmoid Outputs
 
 ```
+
 ## Training Strategy
 
 The model was developed using the following approach:
@@ -107,6 +111,7 @@ Binary Cross Entropy was used as the loss function.
 Instead of using a fixed 0.5 threshold for every abnormality, class-specific thresholds were selected using the validation set.
 These thresholds were then applied to the held-out test set.
 
+
 ## Input Processing
 
 Chest X-ray images are:
@@ -120,6 +125,7 @@ The final model produces 14 independent outputs, one for each supported abnormal
 ```
 
 ```
+
 ## 📊 Evaluation & Results
 
 The model was evaluated on a held-out test set using metrics suited for multi-label classification and class imbalance.
